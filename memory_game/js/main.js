@@ -1,14 +1,38 @@
-var cards = ["queen", "queen", "king", "king"];
+var cards = [
+	{
+		rank: "queen",
+		suit: "hearts",
+		cardImage: "images/queen-of-hearts.png"
+	},
+	{
+		rank: "queen",
+		suit: "diamonds",
+		cardImage: "images/queen-of-diamonds.png"
+	},
+	{
+		rank: "king",
+		suit: "hearts",
+		cardImage: "images/king-of-hearts.png"
+	},
+	{
+		rank: "king",
+		suit: "diamonds",
+		cardImage: "images/king-of-diamonds.png"
+	}
+];
+
 var cardsInPlay = [];
 
-var cardId = "0";
-
-cardsInPlay.push(cards[cardId]);
 
 //create a function to store all steps that should happen when the user flips a card.
-var flipCard = function(cardID) {
+var flipCard = function(cardId) {
 	// Display card that was just flipped
-	console.log("User flipped " + cards[cardId]);
+	console.log("User flipped " + cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suit);
+		
+	cardsInPlay.push(cards[cardId].rank);
+
 		// Add logic to check to see if the length of the CardsInPlay array is 2
 		// also check equality between the two cards match
 		if (cardsInPlay.length === 2) {
@@ -21,10 +45,11 @@ var flipCard = function(cardID) {
 };
 
 
-cardsInPlay.push(cards[cardId]);
 
 flipCard(0);
 flipCard(2);
+
+
 
 // create a function to store the steps to check for a match.
 var checkForMatch = function() {
